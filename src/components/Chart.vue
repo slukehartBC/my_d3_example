@@ -65,6 +65,8 @@ export default {
         .nest()
         .key(d => d.user)
         .entries(this.tweetData);
+        console.log("Nested tweets" + JSON.stringify(nestedTweets));
+
 
       const packableTweets = { id: "All Tweets", values: nestedTweets };
       return d3

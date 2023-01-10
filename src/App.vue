@@ -8,13 +8,12 @@
 <script>
 import * as d3 from "d3";
 
-import HelloWorld from "./components/HelloWorld.vue";
 import PackChart from "./components/Chart.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
+   
     PackChart
   },
   data: function() {
@@ -23,12 +22,14 @@ export default {
     };
   },
   mounted() {
+    // eslint-disable-next-line
     console.log("App loaded");
     this.fetchData();
   },
   methods: {
     async fetchData() {
       let data = await d3.json("./tweets.json");
+      console.log("JSON Data" + JSON.stringify(data))
       this.loadData = data;
     }
   }
